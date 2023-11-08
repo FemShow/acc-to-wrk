@@ -1,0 +1,733 @@
+{
+    "@context": "http://www.w3.org/ns/csvw",
+    "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#dataset",
+    "tables": [
+        {
+            "url": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv",
+            "tableSchema": {
+                "columns": [
+                    {
+                        "titles": "Category",
+                        "name": "category",
+                        "propertyUrl": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#dimension/category",
+                        "valueUrl": "category.csv#{+category}",
+                        "required": true
+                    },
+                    {
+                        "titles": "Year",
+                        "name": "year",
+                        "propertyUrl": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#dimension/year",
+                        "valueUrl": "year.csv#{+year}",
+                        "required": true
+                    },
+                    {
+                        "titles": "Value",
+                        "name": "value",
+                        "aboutUrl": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#obs/{category},{year}@number",
+                        "propertyUrl": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#measure/number",
+                        "datatype": "integer",
+                        "required": true
+                    },
+                    {
+                        "name": "virt_slice",
+                        "virtual": true,
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "qb:Slice"
+                    },
+                    {
+                        "name": "virt_slice_structure",
+                        "virtual": true,
+                        "propertyUrl": "qb:sliceStructure",
+                        "valueUrl": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#slice/cross-measures"
+                    },
+                    {
+                        "name": "virt_obs_value",
+                        "virtual": true,
+                        "propertyUrl": "qb:observation",
+                        "valueUrl": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#obs/{category},{year}@number"
+                    },
+                    {
+                        "name": "virt_obs_value_meas",
+                        "virtual": true,
+                        "aboutUrl": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#obs/{category},{year}@number",
+                        "propertyUrl": "qb:measureType",
+                        "valueUrl": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#measure/number"
+                    },
+                    {
+                        "name": "virt_obs_value_unit",
+                        "virtual": true,
+                        "aboutUrl": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#obs/{category},{year}@number",
+                        "propertyUrl": "http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure",
+                        "valueUrl": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#unit/number"
+                    },
+                    {
+                        "name": "virt_dim_value_category",
+                        "virtual": true,
+                        "aboutUrl": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#obs/{category},{year}@number",
+                        "propertyUrl": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#dimension/category",
+                        "valueUrl": "category.csv#{+category}"
+                    },
+                    {
+                        "name": "virt_dim_value_year",
+                        "virtual": true,
+                        "aboutUrl": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#obs/{category},{year}@number",
+                        "propertyUrl": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#dimension/year",
+                        "valueUrl": "year.csv#{+year}"
+                    },
+                    {
+                        "name": "virt_obs_value_type",
+                        "virtual": true,
+                        "aboutUrl": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#obs/{category},{year}@number",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "qb:Observation"
+                    },
+                    {
+                        "name": "virt_dataSet_value",
+                        "virtual": true,
+                        "aboutUrl": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#obs/{category},{year}@number",
+                        "propertyUrl": "qb:dataSet",
+                        "valueUrl": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#dataset"
+                    }
+                ],
+                "foreignKeys": [
+                    {
+                        "columnReference": "category",
+                        "reference": {
+                            "resource": "category.csv",
+                            "columnReference": "uri_identifier"
+                        }
+                    },
+                    {
+                        "columnReference": "year",
+                        "reference": {
+                            "resource": "year.csv",
+                            "columnReference": "uri_identifier"
+                        }
+                    }
+                ],
+                "primaryKey": [
+                    "category",
+                    "year"
+                ],
+                "aboutUrl": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#slice/{category},{year}"
+            }
+        },
+        {
+            "url": "category.csv",
+            "tableSchema": "category.table.json",
+            "suppressOutput": true
+        },
+        {
+            "url": "year.csv",
+            "tableSchema": "year.table.json",
+            "suppressOutput": true
+        }
+    ],
+    "rdfs:seeAlso": [
+        {
+            "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#class/category",
+            "@type": [
+                "http://www.w3.org/2000/01/rdf-schema#Resource",
+                "http://www.w3.org/2000/01/rdf-schema#Class"
+            ]
+        },
+        {
+            "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#component/category",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://www.w3.org/2000/01/rdf-schema#Resource",
+                "http://purl.org/linked-data/cube#ComponentSpecification"
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#dimension/category"
+                }
+            ],
+            "http://purl.org/linked-data/cube#dimension": [
+                {
+                    "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#dimension/category"
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 1
+                }
+            ]
+        },
+        {
+            "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#dimension/year",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentProperty",
+                "http://purl.org/linked-data/cube#CodedProperty",
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+                "http://purl.org/linked-data/cube#DimensionProperty",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#codeList": [
+                {
+                    "@id": "year.csv#code-list"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "Year"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#range": [
+                {
+                    "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#class/year"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                {
+                    "@id": "http://purl.org/linked-data/sdmx/2009/dimension#refPeriod"
+                }
+            ]
+        },
+        {
+            "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#structure",
+            "@type": [
+                "http://purl.org/linked-data/cube#DataStructureDefinition",
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#component": [
+                {
+                    "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#component/category"
+                },
+                {
+                    "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#component/year"
+                },
+                {
+                    "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#component/unit"
+                },
+                {
+                    "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#component/measure-type"
+                },
+                {
+                    "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#component/number"
+                }
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#dimension/category"
+                },
+                {
+                    "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#dimension/year"
+                },
+                {
+                    "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#measure/number"
+                },
+                {
+                    "@id": "http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure"
+                },
+                {
+                    "@id": "http://purl.org/linked-data/cube#measureType"
+                }
+            ],
+            "http://purl.org/linked-data/cube#sliceKey": [
+                {
+                    "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#slice/cross-measures"
+                }
+            ]
+        },
+        {
+            "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#component/measure-type",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://www.w3.org/2000/01/rdf-schema#Resource",
+                "http://purl.org/linked-data/cube#ComponentSpecification"
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "http://purl.org/linked-data/cube#measureType"
+                }
+            ],
+            "http://purl.org/linked-data/cube#dimension": [
+                {
+                    "@id": "http://purl.org/linked-data/cube#measureType"
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 3
+                }
+            ]
+        },
+        {
+            "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#component/number",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://www.w3.org/2000/01/rdf-schema#Resource",
+                "http://purl.org/linked-data/cube#ComponentSpecification"
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#measure/number"
+                }
+            ],
+            "http://purl.org/linked-data/cube#measure": [
+                {
+                    "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#measure/number"
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 5
+                }
+            ]
+        },
+        {
+            "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#component/year",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://www.w3.org/2000/01/rdf-schema#Resource",
+                "http://purl.org/linked-data/cube#ComponentSpecification"
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#dimension/year"
+                }
+            ],
+            "http://purl.org/linked-data/cube#dimension": [
+                {
+                    "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#dimension/year"
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 2
+                }
+            ]
+        },
+        {
+            "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#dimension/category",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentProperty",
+                "http://purl.org/linked-data/cube#CodedProperty",
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+                "http://purl.org/linked-data/cube#DimensionProperty",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#codeList": [
+                {
+                    "@id": "category.csv#code-list"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "Category"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#range": [
+                {
+                    "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#class/category"
+                }
+            ]
+        },
+        {
+            "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#component/unit",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://www.w3.org/2000/01/rdf-schema#Resource",
+                "http://purl.org/linked-data/cube#ComponentSpecification"
+            ],
+            "http://purl.org/linked-data/cube#attribute": [
+                {
+                    "@id": "http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure"
+                }
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure"
+                }
+            ],
+            "http://purl.org/linked-data/cube#componentRequired": [
+                {
+                    "@value": true
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 4
+                }
+            ]
+        },
+        {
+            "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#class/year",
+            "@type": [
+                "http://www.w3.org/2000/01/rdf-schema#Resource",
+                "http://www.w3.org/2000/01/rdf-schema#Class"
+            ]
+        },
+        {
+            "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#measure/number",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentProperty",
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+                "http://purl.org/linked-data/cube#MeasureProperty",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#comment": [
+                {
+                    "@language": "en",
+                    "@value": "Number of people who had any Access to Work Elements"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "Number"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#range": [
+                {
+                    "@id": "http://www.w3.org/2001/XMLSchema#integer"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                {
+                    "@id": "https://purl.org/csv-cubed/resources/measures#count"
+                }
+            ]
+        },
+        {
+            "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#slice/cross-measures",
+            "@type": [
+                "http://purl.org/linked-data/cube#SliceKey",
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#dimension/category"
+                },
+                {
+                    "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#dimension/year"
+                }
+            ]
+        },
+        {
+            "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#dataset",
+            "@type": [
+                "http://www.w3.org/ns/dcat#Dataset",
+                "http://www.w3.org/ns/dcat#Resource",
+                "http://www.w3.org/2000/01/rdf-schema#Resource",
+                "http://purl.org/linked-data/cube#Attachable",
+                "http://purl.org/linked-data/cube#DataSet"
+            ],
+            "http://purl.org/dc/terms/creator": [
+                {
+                    "@id": "https://www.gov.uk/government/organisations/department-for-work-pensions"
+                }
+            ],
+            "http://purl.org/dc/terms/description": [
+                {
+                    "@type": "https://www.w3.org/ns/iana/media-types/text/markdown#Resource",
+                    "@value": "There are two main types of Access to Work provision: Assessments and Elements. More than one item of Access to Work provision of the same type or of different types can be approved for the same person in a given financial year or in different financial years. Due to the Access to Work digital transformation programme and the move to a new administrative system, we are unable to provide a gender breakdown for those who got an approval or received a payment for Communication Support for Interviews (CSI) for 2020/21 and 2021/22. "
+                }
+            ],
+            "http://purl.org/dc/terms/identifier": [
+                {
+                    "@value": "The number of people who had any Access to Work Elements approved by various customer characteristics"
+                }
+            ],
+            "http://purl.org/dc/terms/issued": [
+                {
+                    "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+                    "@value": "2022-10-20T00:00:00"
+                }
+            ],
+            "http://purl.org/dc/terms/license": [
+                {
+                    "@id": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+                }
+            ],
+            "http://purl.org/dc/terms/modified": [
+                {
+                    "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+                    "@value": "2022-10-20T00:00:00"
+                }
+            ],
+            "http://purl.org/dc/terms/publisher": [
+                {
+                    "@id": "https://www.gov.uk/government/organisations/department-for-work-pensions"
+                }
+            ],
+            "http://purl.org/dc/terms/title": [
+                {
+                    "@language": "en",
+                    "@value": "The number of people who had any Access to Work Elements approved by various customer characteristics"
+                }
+            ],
+            "http://purl.org/linked-data/cube#structure": [
+                {
+                    "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#structure"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#comment": [
+                {
+                    "@language": "en",
+                    "@value": "The number of people who had any Access to Work Elements approved by various customer characteristics, 2007/08 - 2021/21"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "The number of people who had any Access to Work Elements approved by various customer characteristics"
+                }
+            ],
+            "http://www.w3.org/ns/dcat#keyword": [
+                {
+                    "@language": "en",
+                    "@value": "bifida"
+                },
+                {
+                    "@language": "en",
+                    "@value": "breathing"
+                },
+                {
+                    "@language": "en",
+                    "@value": "dyslexia"
+                },
+                {
+                    "@language": "en",
+                    "@value": "kidney"
+                },
+                {
+                    "@language": "en",
+                    "@value": "speaking"
+                },
+                {
+                    "@language": "en",
+                    "@value": "conditions"
+                },
+                {
+                    "@language": "en",
+                    "@value": "difficulty"
+                },
+                {
+                    "@language": "en",
+                    "@value": "spina"
+                },
+                {
+                    "@language": "en",
+                    "@value": "digestion"
+                },
+                {
+                    "@language": "en",
+                    "@value": "heart"
+                },
+                {
+                    "@language": "en",
+                    "@value": "blood"
+                },
+                {
+                    "@language": "en",
+                    "@value": "hearing"
+                },
+                {
+                    "@language": "en",
+                    "@value": "health"
+                },
+                {
+                    "@language": "en",
+                    "@value": "stomach"
+                },
+                {
+                    "@language": "en",
+                    "@value": "skin"
+                },
+                {
+                    "@language": "en",
+                    "@value": "illness"
+                },
+                {
+                    "@language": "en",
+                    "@value": "chest"
+                },
+                {
+                    "@language": "en",
+                    "@value": "severe"
+                },
+                {
+                    "@language": "en",
+                    "@value": "back"
+                },
+                {
+                    "@language": "en",
+                    "@value": "hands"
+                },
+                {
+                    "@language": "en",
+                    "@value": "pressure"
+                },
+                {
+                    "@language": "en",
+                    "@value": "neck"
+                },
+                {
+                    "@language": "en",
+                    "@value": "liver"
+                },
+                {
+                    "@language": "en",
+                    "@value": "arms"
+                },
+                {
+                    "@language": "en",
+                    "@value": "circulation"
+                },
+                {
+                    "@language": "en",
+                    "@value": "deaf"
+                },
+                {
+                    "@language": "en",
+                    "@value": "learning"
+                },
+                {
+                    "@language": "en",
+                    "@value": "diabetes"
+                },
+                {
+                    "@language": "en",
+                    "@value": "feet"
+                },
+                {
+                    "@language": "en",
+                    "@value": "seeing"
+                },
+                {
+                    "@language": "en",
+                    "@value": "epilepsy"
+                },
+                {
+                    "@language": "en",
+                    "@value": "mental"
+                },
+                {
+                    "@language": "en",
+                    "@value": "disfigurement"
+                },
+                {
+                    "@language": "en",
+                    "@value": "progressive"
+                },
+                {
+                    "@language": "en",
+                    "@value": "disability"
+                },
+                {
+                    "@language": "en",
+                    "@value": "legs"
+                },
+                {
+                    "@language": "en",
+                    "@value": "cerebral"
+                },
+                {
+                    "@language": "en",
+                    "@value": "condition"
+                },
+                {
+                    "@language": "en",
+                    "@value": "palsy"
+                }
+            ],
+            "http://www.w3.org/ns/dcat#theme": [
+                {
+                    "@id": "https://www.ons.gov.uk/economy/governmentpublicsectorandtaxes"
+                }
+            ],
+            "http://www.w3.org/ns/prov#wasGeneratedBy": [
+                {
+                    "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#csvcubed-build-activity"
+                }
+            ]
+        },
+        {
+            "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#csvcubed-build-activity",
+            "@type": [
+                "http://www.w3.org/2000/01/rdf-schema#Resource",
+                "http://www.w3.org/ns/prov#Activity"
+            ],
+            "http://www.w3.org/ns/prov#used": [
+                {
+                    "@id": "https://github.com/GSS-Cogs/csvcubed/releases/tag/v0.4.4"
+                }
+            ]
+        },
+        {
+            "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#dependency/category",
+            "@type": [
+                "http://rdfs.org/ns/void#Dataset",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://rdfs.org/ns/void#dataDump": [
+                {
+                    "@id": "./category.csv-metadata.json"
+                }
+            ],
+            "http://rdfs.org/ns/void#uriSpace": [
+                {
+                    "@value": "category.csv#"
+                }
+            ]
+        },
+        {
+            "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#dependency/year",
+            "@type": [
+                "http://rdfs.org/ns/void#Dataset",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://rdfs.org/ns/void#dataDump": [
+                {
+                    "@id": "./year.csv-metadata.json"
+                }
+            ],
+            "http://rdfs.org/ns/void#uriSpace": [
+                {
+                    "@value": "year.csv#"
+                }
+            ]
+        },
+        {
+            "@id": "the-number-of-people-who-had-any-access-to-work-elements-approved-by-various-customer-characteristics.csv#unit/number",
+            "@type": [
+                "http://qudt.org/schema/qudt/Unit",
+                "http://www.ontology-of-units-of-measure.org/resource/om-2/Unit",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://qudt.org/schema/qudt/isScalingOf": [
+                {
+                    "@id": "http://qudt.org/vocab/unit/NUM"
+                }
+            ],
+            "http://www.ontology-of-units-of-measure.org/resource/om-2/hasFactor": [
+                {
+                    "@type": "http://www.w3.org/2001/XMLSchema#float",
+                    "@value": "1.0"
+                }
+            ],
+            "http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit": [
+                {
+                    "@id": "http://qudt.org/vocab/unit/NUM"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+                {
+                    "@id": "http://qudt.org/vocab/unit/NUM"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "Number"
+                }
+            ]
+        }
+    ]
+}

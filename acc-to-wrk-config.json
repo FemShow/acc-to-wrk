@@ -1,0 +1,75 @@
+{
+    "$schema": "https://purl.org/csv-cubed/qube-config/v1",
+    "title": "The number of people who had any Access to Work Elements approved by various customer characteristics",
+    "summary": "The number of people who had any Access to Work Elements approved by various customer characteristics, 2007/08 - 2021/21",
+    "description": "There are two main types of Access to Work provision: Assessments and Elements. More than one item of Access to Work provision of the same type or of different types can be approved for the same person in a given financial year or in different financial years. Due to the Access to Work digital transformation programme and the move to a new administrative system, we are unable to provide a gender breakdown for those who got an approval or received a payment for Communication Support for Interviews (CSI) for 2020/21 and 2021/22. ",
+    "license": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+    "public_contact_point_uri": "mailto:access.toworkstatistics@dwp.gov.uk",
+    "themes": ["https://www.ons.gov.uk/economy/governmentpublicsectorandtaxes"],
+    "publisher": "https://www.gov.uk/government/organisations/department-for-work-pensions",
+    "creator": "https://www.gov.uk/government/organisations/department-for-work-pensions",
+    "dataset_issued": "2022-10-20T00:00:00Z",
+    "dataset_modified": "2022-10-20T00:00:00Z",
+    "keywords": [
+        "arms",
+        "hands",
+        "legs",
+        "feet",
+        "back",
+        "neck",
+        "stomach",
+        "liver",
+        "kidney",
+        "digestion",
+        "heart",
+        "blood",
+        "pressure",
+        "circulation",
+        "chest",
+        "breathing",
+        "skin",
+        "conditions",
+        "severe",
+        "disfigurement",
+        "deaf",
+        "hearing",
+        "difficulty",
+        "seeing",
+        "speaking",
+        "learning", 
+        "disability",
+        "progressive",
+        "illness",
+        "dyslexia",
+        "epilepsy",
+        "diabetes",
+        "mental", 
+        "health",
+        "condition",
+        "cerebral",
+        "palsy",
+        "spina",
+        "bifida"
+    ],
+    "columns": {
+        "Category": {
+            "type": "dimension"
+         },
+         "Year":{
+            "from_template": "year"
+          },
+          "Value":{
+            "type": "observations",
+            "data_type": "integer",
+            "measure": {
+              "label": "Number",
+              "description": "Number of people who had any Access to Work Elements",
+              "from_existing": "https://purl.org/csv-cubed/resources/measures#count"
+            },
+            "unit": {
+              "label": "Number",
+              "from_existing": "http://qudt.org/vocab/unit/NUM"
+            }
+          }
+    }
+}
